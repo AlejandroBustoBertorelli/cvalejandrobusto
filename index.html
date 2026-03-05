@@ -8,8 +8,7 @@
 body { font-family: Georgia, serif; color: #2c2c2c; background: #fff; font-size: 10.5pt; line-height: 1.5; }
 .header { background: #1a3a5c; color: white; padding: 32px 48px 28px; }
 .header h1 { font-size: 24pt; font-weight: bold; letter-spacing: 1px; margin-bottom: 4px; }
-.header .titulo { font-size: 11pt; color: #a8c8e8; font-style: italic; margin-bottom: 14px; }
-.header-contacto { display: flex; gap: 24px; font-size: 9.5pt; color: #d0e8f8; flex-wrap: wrap; }
+.header .titulo { font-size: 11pt; color: #a8c8e8; margin-bottom: 0; }
 .body-wrap { display: flex; }
 .sidebar { width: 215px; min-width: 215px; background: #f0f4f8; padding: 28px 20px; border-right: 1px solid #dce5ef; }
 .main { flex: 1; padding: 28px 36px; }
@@ -17,6 +16,8 @@ body { font-family: Georgia, serif; color: #2c2c2c; background: #fff; font-size:
 .section-title:first-child { margin-top: 0; }
 .sidebar-item { margin-bottom: 8px; font-size: 9.5pt; color: #3a3a3a; }
 .sidebar-item strong { display: block; color: #1a3a5c; font-size: 9pt; margin-bottom: 3px; }
+.contact-item { font-size: 9.5pt; color: #3a3a3a; margin-bottom: 6px; line-height: 1.4; font-variant-numeric: normal; font-feature-settings: "tnum" 1, "lnum" 1; }
+.contact-item strong { display: block; color: #1a3a5c; font-size: 8.5pt; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 2px; }
 .tag { display: inline-block; background: #1a3a5c; color: white; font-size: 7.5pt; padding: 2px 7px; border-radius: 3px; margin: 2px 2px 2px 0; }
 .entry { margin-bottom: 15px; }
 .entry-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
@@ -42,19 +43,20 @@ body { font-family: Georgia, serif; color: #2c2c2c; background: #fff; font-size:
 <div class="header">
   <h1>Alejandro Fabián Busto Bertorelli</h1>
   <div class="titulo">Licenciado en Psicología &nbsp;·&nbsp; Enfoque Cognitivo-Conductual</div>
-  <div class="header-contacto">
-    <span>098 053 967</span>
-    <span>alebusto15@gmail.com</span>
-    <span>Progreso, Canelones</span>
-    <span>23/11/1994 · 31 años</span>
-  </div>
 </div>
 <div class="body-wrap">
   <div class="sidebar">
+    <div class="section-title">Contacto</div>
+    <div class="contact-item"><strong>Teléfono</strong><span style="font-family: Arial, sans-serif;">098 053 967</span></div>
+    <div class="contact-item"><strong>Correo</strong>alebusto15@gmail.com</div>
+    <div class="contact-item"><strong>Ubicación</strong>Progreso, Canelones</div>
+    <div class="contact-item"><strong>Fecha de nacimiento</strong><span style="font-family: Arial, sans-serif;">23/11/1994 · 31 años</span></div>
+
     <div class="section-title">Competencias</div>
     <div class="sidebar-item"><strong>Clínicas</strong><span class="tag">Terapias cognitivas, conductuales y contextuales</span><span class="tag">Ansiedad y depresión</span><span class="tag">Adultos y jóvenes</span></div>
     <div class="sidebar-item" style="margin-top:8px;"><strong>Investigación</strong><span class="tag">Análisis estadístico</span><span class="tag">Validación de escalas psicológicas</span><span class="tag">Ética en investigación</span></div>
     <div class="sidebar-item" style="margin-top:8px;"><strong>Docencia</strong><span class="tag">Profesor particular</span><span class="tag">Talleres grupales</span></div>
+
     <div class="section-title">Idiomas</div>
     <div class="lang-title">Inglés – Nivel First</div>
     <div class="idioma-row"><span class="idioma-label">Comprensión</span><span class="idioma-val">Muy bien</span></div>
