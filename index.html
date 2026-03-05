@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CV – Alejandro Fabián Busto Bertorelli</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -33,13 +34,38 @@ body { font-family: Georgia, serif; color: #2c2c2c; background: #fff; font-size:
 .idioma-val { font-weight: bold; color: #1a3a5c; }
 .lang-title { font-weight: bold; font-size: 10pt; color: #1a3a5c; margin-bottom: 6px; }
 .badge { display: inline-block; background: #1a3a5c; color: white; font-size: 9pt; padding: 3px 10px; border-radius: 4px; margin-top: 5px; }
-.print-btn { position: fixed; top: 16px; right: 16px; background: #1a3a5c; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-size: 11pt; cursor: pointer; z-index: 999; font-family: sans-serif; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
-.print-btn:hover { background: #2a5a8c; }
+.print-btn { position: fixed; top: 16px; right: 16px; background: #f2f2f2; color: #1a3a5c; border: none; padding: 10px 20px; border-radius: 6px; font-size: 11pt; cursor: pointer; z-index: 999; font-family: sans-serif; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+.print-btn:hover { background: #e0e0e0; }
 @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .print-btn { display: none; } }
+@media (max-width: 600px) {
+  body { font-size: 13pt; }
+  .header { padding: 24px 20px 20px; }
+  .header h1 { font-size: 20pt; }
+  .header .titulo { font-size: 13pt; }
+  .body-wrap { flex-direction: column; }
+  .sidebar { width: 100%; min-width: unset; border-right: none; border-bottom: 1px solid #dce5ef; padding: 24px 20px; }
+  .main { padding: 24px 20px; }
+  .section-title { font-size: 11pt; margin-top: 26px; }
+  .contact-item { font-size: 12pt; margin-bottom: 10px; }
+  .contact-item strong { font-size: 10pt; }
+  .sidebar-item { font-size: 12pt; }
+  .sidebar-item strong { font-size: 11pt; }
+  .tag { font-size: 10pt; padding: 3px 9px; }
+  .entry-title { font-size: 13pt; }
+  .entry-date { font-size: 11pt; }
+  .entry-sub { font-size: 11pt; }
+  .entry ul { font-size: 12pt; }
+  .perfil-text { font-size: 12pt; }
+  .poster-item { font-size: 12pt; }
+  .idioma-row { font-size: 12pt; }
+  .lang-title { font-size: 13pt; }
+  .badge { font-size: 11pt; }
+  .print-btn { font-size: 13pt; padding: 12px 22px; }
+}
 </style>
 </head>
 <body>
-<button class="print-btn" onclick="window.print()">⬇ Guardar como PDF</button>
+<button class="print-btn" onclick="window.print()">Guardar como PDF</button>
 <div class="header">
   <h1>Alejandro Fabián Busto Bertorelli</h1>
   <div class="titulo">Licenciado en Psicología &nbsp;·&nbsp; Enfoque Cognitivo-Conductual</div>
@@ -48,7 +74,7 @@ body { font-family: Georgia, serif; color: #2c2c2c; background: #fff; font-size:
   <div class="sidebar">
     <div class="section-title">Contacto</div>
     <div class="contact-item"><strong>Teléfono</strong><span style="font-family: Arial, sans-serif;">098 053 967</span></div>
-    <div class="contact-item"><strong>Correo</strong>alebusto15@gmail.com</div>
+    <div class="contact-item"><strong>Correo</strong>alebusto15&#64;gmail.com</div>
     <div class="contact-item"><strong>Ubicación</strong>Progreso, Canelones</div>
     <div class="contact-item"><strong>Fecha de nacimiento</strong><span style="font-family: Arial, sans-serif;">23/11/1994 · 31 años</span></div>
 
@@ -115,9 +141,4 @@ body { font-family: Georgia, serif; color: #2c2c2c; background: #fff; font-size:
     <div class="entry">
       <div class="entry-header"><span class="entry-title">Auxiliar de Farmacia Hospitalaria</span><span class="entry-date">2020 – 2021</span></div>
       <div class="entry-sub">Escuela de Enfermería Colón · Las Piedras, Canelones</div>
-      <ul><li>Dispensación de medicación, atención al usuario y manejo de estupefacientes</li><li>Desarrollo de escucha activa y trabajo interdisciplinario en equipo</li><li>Conocimiento administrativo de stock y manejo de equipos</li></ul>
-    </div>
-  </div>
-</div>
-</body>
-</html>
+      <ul><li>Dispensación de medicación, atención al usuario y manejo de estupefacientes</li><li>Desarrollo de escucha activa y trabajo interdisciplinario en eq
