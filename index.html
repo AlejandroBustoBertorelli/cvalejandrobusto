@@ -7,19 +7,22 @@
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: Georgia, serif; color: #2c2c2c; background: #fff; font-size: 11.5pt; line-height: 1.5; }
-.header { background: #1a3a5c; color: white; padding: 32px 48px 28px; }
+.header { background: #1a3a5c; color: white; padding: 37px 48px 33px; }
 .header h1 { font-size: 25pt; font-weight: bold; letter-spacing: 1px; margin-bottom: 4px; }
 .header .titulo { font-size: 12pt; color: #a8c8e8; margin-bottom: 0; }
-.body-wrap { display: flex; }
-.sidebar { width: 215px; min-width: 215px; background: #f0f4f8; padding: 28px 20px; border-right: 1px solid #dce5ef; }
-.main { flex: 1; padding: 28px 36px; }
+
+/* Zona superior: sidebar + perfil */
+.top-wrap { display: grid; grid-template-columns: 215px 1fr; }
+.sidebar { background: #f0f4f8; padding: 28px 20px; border-right: 1px solid #dce5ef; border-bottom: 1px solid #dce5ef; }
+.perfil-col { padding: 28px 36px; }
+
+/* Zona inferior: ancho completo */
+.full-content { padding: 28px 36px 28px 41px; }
+
 .section-title { font-size: 9.5pt; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: #1a3a5c; border-bottom: 2px solid #1a3a5c; padding-bottom: 4px; margin-bottom: 12px; margin-top: 22px; }
 .section-title:first-child { margin-top: 0; }
-.sidebar-item { margin-bottom: 8px; font-size: 10.5pt; color: #3a3a3a; }
-.sidebar-item strong { display: block; color: #1a3a5c; font-size: 10pt; margin-bottom: 3px; }
-.contact-item { font-size: 10.5pt; color: #3a3a3a; margin-bottom: 6px; line-height: 1.4; font-variant-numeric: normal; font-feature-settings: "tnum" 1, "lnum" 1; }
+.contact-item { font-size: 10.5pt; color: #3a3a3a; margin-bottom: 6px; line-height: 1.4; }
 .contact-item strong { display: block; color: #1a3a5c; font-size: 9.5pt; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 2px; }
-.tag { display: inline-block; background: #1a3a5c; color: white; font-size: 8.5pt; padding: 2px 7px; border-radius: 3px; margin: 2px 2px 2px 0; }
 .entry { margin-bottom: 15px; }
 .entry-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
 .entry-title { font-weight: bold; font-size: 12pt; color: #1a3a5c; }
@@ -29,36 +32,32 @@ body { font-family: Georgia, serif; color: #2c2c2c; background: #fff; font-size:
 .entry ul li { margin-bottom: 2px; }
 .perfil-text { font-size: 11.8pt; color: #3a3a3a; line-height: 1.65; text-align: justify; border-left: 3px solid #1a3a5c; padding-left: 12px; }
 .poster-item { font-size: 11pt; color: #3a3a3a; margin-bottom: 7px; padding-left: 10px; border-left: 2px solid #a8c8e8; line-height: 1.4; }
-.idioma-row { display: flex; justify-content: space-between; font-size: 10.5pt; margin-bottom: 3px; }
-.idioma-label { color: #555; }
-.idioma-val { font-weight: bold; color: #1a3a5c; }
-.lang-title { font-weight: bold; font-size: 11pt; color: #1a3a5c; margin-bottom: 6px; }
 .badge { display: inline-block; background: #1a3a5c; color: white; font-size: 10pt; padding: 3px 10px; border-radius: 4px; margin-top: 5px; }
 .print-btn { position: fixed; top: 16px; right: 16px; background: #f2f2f2; color: #1a3a5c; border: none; padding: 10px 20px; border-radius: 6px; font-size: 11pt; cursor: pointer; z-index: 999; font-family: sans-serif; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
 .print-btn:hover { background: #e0e0e0; }
-@media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .print-btn { display: none; } .sidebar { background: #fff; border-right: none; } }
+@media print {
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .print-btn { display: none; }
+  .sidebar { background: #fff; border-right: none; }
+}
 @media (max-width: 600px) {
   body { font-size: 14pt; }
   .header { padding: 24px 20px 20px; }
   .header h1 { font-size: 21pt; }
   .header .titulo { font-size: 14pt; }
-  .body-wrap { flex-direction: column; }
+  .top-wrap { flex-direction: column; }
   .sidebar { width: 100%; min-width: unset; border-right: none; border-bottom: 1px solid #dce5ef; padding: 24px 20px; }
-  .main { padding: 24px 20px; }
+  .perfil-col { padding: 24px 20px; }
+  .full-content { padding: 24px 20px; }
   .section-title { font-size: 12pt; margin-top: 26px; }
   .contact-item { font-size: 13pt; margin-bottom: 10px; }
   .contact-item strong { font-size: 11pt; }
-  .sidebar-item { font-size: 13pt; }
-  .sidebar-item strong { font-size: 12pt; }
-  .tag { font-size: 11pt; padding: 3px 9px; }
   .entry-title { font-size: 15pt; }
   .entry-date { font-size: 13pt; }
   .entry-sub { font-size: 13pt; }
   .entry ul { font-size: 14pt; }
   .perfil-text { font-size: 14pt; }
   .poster-item { font-size: 14pt; }
-  .idioma-row { font-size: 13pt; }
-  .lang-title { font-size: 14pt; }
   .badge { font-size: 12pt; }
   .print-btn { font-size: 14pt; padding: 12px 22px; }
 }
@@ -66,89 +65,94 @@ body { font-family: Georgia, serif; color: #2c2c2c; background: #fff; font-size:
 </head>
 <body>
 <button class="print-btn" onclick="window.print()">Guardar como PDF</button>
+
 <div class="header">
   <h1>Alejandro Fabián Busto Bertorelli</h1>
   <div class="titulo">Licenciado en Psicología &nbsp;·&nbsp; Enfoque Cognitivo-Conductual</div>
 </div>
-<div class="body-wrap">
+
+<!-- Zona superior: sidebar con contacto + perfil profesional -->
+<div class="top-wrap">
   <div class="sidebar">
-    <div class="section-title">Contacto</div>
+    <div class="section-title">Datos Personales</div>
     <div class="contact-item"><strong>Teléfono</strong><span style="font-family: Arial, sans-serif;">098 053 967</span></div>
     <div class="contact-item"><strong>Correo</strong>alebusto15&#64;gmail.com</div>
-    <div class="contact-item"><strong>Ubicación</strong>Progreso, Canelones</div>
-    <div class="contact-item"><strong>Fecha de nacimiento</strong><span style="font-family: Arial, sans-serif;">23/11/1994 · 31 años</span></div>
-
-    <div class="section-title">Competencias</div>
-    <div class="sidebar-item"><strong>Clínicas</strong><span class="tag">Terapias cognitivas, conductuales y contextuales</span><span class="tag">Ansiedad y depresión</span><span class="tag">Adultos y jóvenes</span></div>
-    <div class="sidebar-item" style="margin-top:8px;"><strong>Investigación</strong><span class="tag">Análisis estadístico</span><span class="tag">Validación de escalas psicológicas</span><span class="tag">Ética en investigación</span></div>
-    <div class="sidebar-item" style="margin-top:8px;"><strong>Docencia</strong><span class="tag">Profesor particular</span><span class="tag">Talleres grupales</span></div>
-
+    <div class="contact-item"><strong>Fecha de nacimiento</strong><span style="font-family: Arial, sans-serif;">23/11/1994</span></div>
   </div>
-  <div class="main">
-    <div class="section-title">Perfil Profesional</div>
+  <div class="perfil-col">
+    <div class="section-title">Perfil<br>Profesional</div>
     <p class="perfil-text">Licenciado en Psicología con formación clínica, académica y docente. Experiencia en procesos psicoterapéuticos supervisados con adultos, abordando principalmente trastornos de ansiedad y sintomatología depresiva desde un enfoque cognitivo-conductual. Interesado en el trabajo clínico con adolescentes y adultos jóvenes, con formación continua en psicoterapias cognitivas, conductuales y contextuales. Además, con experiencia en la creación y participación de proyectos de investigación.</p>
-    <div class="section-title">Formación Académica</div>
-    <div class="entry">
-      <div class="entry-header"><span class="entry-title">Licenciado en Psicología</span><span class="entry-date">2020 – 2025</span></div>
-      <div class="entry-sub">Facultad de Psicología · Universidad de la República · Montevideo</div>
-      <div class="badge">Promedio: 9.51 / 10</div>
-      <ul style="margin-top:6px;"><li>Experiencia clínica en psicoterapia cognitivo-conductual</li><li>Trabajo final de grado sobre validación de instrumentos psicológicos</li><li>Prácticas de extensión en contextos educativos</li></ul>
-    </div>
-    <div class="entry">
-      <div class="entry-header"><span class="entry-title">Posgrado en Psicoterapias Cognitivas, Conductuales y Contextuales</span><span class="entry-date">2026 – Actualidad</span></div>
-      <div class="entry-sub">Gaudere · Montevideo</div>
-      <ul><li>Profundización teórico-práctica</li><li>Supervisión de casos</li></ul>
-    </div>
-    <div class="section-title">Experiencia Clínica</div>
-    <div class="entry">
-      <div class="entry-header"><span class="entry-title">Practicante – Hospital de Clínicas "Dr. Manuel Quintela"</span><span class="entry-date">2025</span></div>
-      <div class="entry-sub">Facultad de Psicología · UdelaR · Supervisora: Prof. Victoria Gradin</div>
-      <ul><li>Atención psicológica individual a dos pacientes adultos (aprox. 50 horas clínicas)</li><li>Abordaje de sintomatología ansiosa y depresiva en población adulta</li><li>Psicoterapia con enfoque cognitivo-conductual</li><li>Supervisión clínica grupal (aprox. 80 horas)</li><li>Elaboración de informes y conceptualización de caso</li><li>Diseño de estrategias de intervención</li></ul>
-    </div>
-    <div class="section-title">Experiencia en Investigación – Facultad de Psicología</div>
-    <div class="entry">
-      <div class="entry-header"><span class="entry-title">Comité de Ética en Investigación. Secretario: 30 horas semanales</span><span class="entry-date">2024 – Actualidad</span></div>
-      <ul><li>Conocimiento de normativa ética nacional e internacional</li><li>Organización de proyectos, planificación de reuniones y elaboración de actas e informes</li></ul>
-    </div>
-    <div class="entry">
-      <div class="entry-header"><span class="entry-title">Trabajo Final de Grado – Validación de la Escala de Respuestas Rumiativas (RRS)</span><span class="entry-date">2025</span></div>
-      <div class="entry-sub">Tutoría: Prof. Víctor Ortuño · Revisor: Prof. Ismael Apud</div>
-      <ul><li>Investigación cuantitativa centrada en procesos cognitivos asociados a sintomatología depresiva y ansiedad</li><li>Análisis estadístico</li></ul>
-    </div>
-    <div class="section-title">Publicaciones y Presentaciones Científicas</div>
-    <div class="poster-item"><strong>Validación de la Escala de Respuestas Rumiativas (RRS) en muestra de adultas/os emergentes universitarias/os de Uruguay</strong><br><em>Jornadas de Investigación Estudiantil en Psicología, 2025</em></div>
-    <div class="poster-item"><strong>Diferencias de género en las dimensiones negativas de personalidad y religiosidad</strong><br><em>III Congreso Internacional de Psicología, 2025</em></div>
-    <div class="poster-item"><strong>Espiritualidad: Su impacto en la religiosidad y los rasgos oscuros de personalidad</strong><br><em>Jornadas de Investigación Estudiantil en Psicología, 2024</em></div>
-    <div class="section-title">Experiencia Docente</div>
-    <div class="entry">
-      <div class="entry-header"><span class="entry-title">Profesor y orientador particular de Psicología</span><span class="entry-date">2023 – Actualidad</span></div>
-      <div class="entry-sub">Independiente</div>
-      <ul><li>Preparación de clases y coordinación de grupos pequeños</li><li>Desarrollo de habilidades pedagógicas y didácticas</li></ul>
-    </div>
-    <div class="entry">
-      <div class="entry-header"><span class="entry-title">Practicante en liceo – Espacio de Formación Integral</span><span class="entry-date">2024</span></div>
-      <div class="entry-sub">Facultad de Humanidades y Ciencias de la Educación · UdelaR</div>
-      <ul><li>Trabajo con adolescentes en contexto educativo</li><li>Preparación de talleres y elaboración de informes</li></ul>
-    </div>
-    <div class="section-title">Formación complementaria</div>
-    <div class="entry">
-      <div class="entry-header"><span class="entry-title">Auxiliar de Farmacia Hospitalaria</span><span class="entry-date">2020 – 2021</span></div>
-      <div class="entry-sub">Escuela de Enfermería Colón · Las Piedras, Canelones</div>
-      <ul><li>Dispensación de medicación, atención al usuario y manejo de estupefacientes</li><li>Conocimiento de farmacología</li><li>Trabajo en equipo</li></ul>
-    </div>
-    <div class="section-title">Idiomas</div>
-    <div class="entry">
-      <div class="entry-header"><span class="entry-title">Inglés – Nivel First</span></div>
-      <ul>
-        <li>Comprensión: Muy bien</li>
-        <li>Lectura: Muy bien</li>
-        <li>Escritura: Bien</li>
-        <li>Expresión oral: Bien</li>
-      </ul>
-    </div>
   </div>
 </div>
+
+<!-- Zona inferior: ancho completo -->
+<div class="full-content">
+  <div class="section-title">Formación Académica</div>
+  <div class="entry">
+    <div class="entry-header"><span class="entry-title">Licenciado en Psicología</span><span class="entry-date">2020 – 2025</span></div>
+    <div class="entry-sub">Facultad de Psicología · Universidad de la República · Montevideo</div>
+    <div class="badge">Promedio: 9.51 / 10</div>
+    <ul style="margin-top:6px;"><li>Experiencia clínica en psicoterapia cognitivo-conductual</li><li>Trabajo final de grado sobre validación de instrumentos psicológicos</li><li>Prácticas de extensión en contextos educativos</li></ul>
+  </div>
+  <div class="entry">
+    <div class="entry-header"><span class="entry-title">Posgrado en Psicoterapias Cognitivas, Conductuales y Contextuales</span><span class="entry-date">2026 – Actualidad</span></div>
+    <div class="entry-sub">Gaudere · Montevideo</div>
+    <ul><li>Profundización teórico-práctica</li><li>Supervisión de casos</li></ul>
+  </div>
+
+  <div class="section-title">Experiencia Clínica</div>
+  <div class="entry">
+    <div class="entry-header"><span class="entry-title">Practicante – Hospital de Clínicas "Dr. Manuel Quintela"</span><span class="entry-date">2025</span></div>
+    <div class="entry-sub">Facultad de Psicología · UdelaR · Supervisora: Prof. Victoria Gradin</div>
+    <ul><li>Atención psicológica individual a dos pacientes adultos (aprox. 50 horas clínicas)</li><li>Abordaje de sintomatología ansiosa y depresiva en población adulta</li><li>Psicoterapia con enfoque cognitivo-conductual</li><li>Supervisión clínica grupal (aprox. 80 horas)</li><li>Elaboración de informes y conceptualización de caso</li><li>Diseño de estrategias de intervención</li></ul>
+  </div>
+
+  <div class="section-title">Experiencia en Investigación – Facultad de Psicología</div>
+  <div class="entry">
+    <div class="entry-header"><span class="entry-title">Comité de Ética en Investigación. Secretario: 30 horas semanales</span><span class="entry-date">2024 – Actualidad</span></div>
+    <ul><li>Conocimiento de normativa ética nacional e internacional</li><li>Organización de proyectos, planificación de reuniones y elaboración de actas</li></ul>
+  </div>
+  <div class="entry">
+    <div class="entry-header"><span class="entry-title">Trabajo Final de Grado – Validación de la Escala de Respuestas Rumiativas (RRS)</span><span class="entry-date">2025</span></div>
+    <div class="entry-sub">Tutoría: Prof. Víctor Ortuño · Revisor: Prof. Ismael Apud</div>
+    <ul><li>Investigación cuantitativa centrada en procesos cognitivos asociados a sintomatología depresiva y ansiedad</li><li>Análisis estadístico</li></ul>
+  </div>
+
+  <div class="section-title">Publicaciones y Presentaciones Científicas</div>
+  <div class="poster-item"><strong>Validación de la Escala de Respuestas Rumiativas (RRS) en muestra de adultas/os emergentes universitarias/os de Uruguay</strong><br><em>Jornadas de Investigación Estudiantil en Psicología, 2025</em></div>
+  <div class="poster-item"><strong>Diferencias de género en las dimensiones negativas de personalidad y religiosidad</strong><br><em>III Congreso Internacional de Psicología, 2025</em></div>
+  <div class="poster-item"><strong>Espiritualidad: Su impacto en la religiosidad y los rasgos oscuros de personalidad</strong><br><em>Jornadas de Investigación Estudiantil en Psicología, 2024</em></div>
+
+  <div class="section-title">Experiencia Docente</div>
+  <div class="entry">
+    <div class="entry-header"><span class="entry-title">Profesor y orientador particular de Psicología</span><span class="entry-date">2023 – Actualidad</span></div>
+    <div class="entry-sub">Independiente</div>
+    <ul><li>Preparación de clases y coordinación de grupos pequeños</li><li>Desarrollo de habilidades pedagógicas y didácticas</li></ul>
+  </div>
+  <div class="entry">
+    <div class="entry-header"><span class="entry-title">Practicante en liceo – Espacio de Formación Integral</span><span class="entry-date">2024</span></div>
+    <div class="entry-sub">Facultad de Humanidades y Ciencias de la Educación · UdelaR</div>
+    <ul><li>Trabajo con adolescentes en contexto educativo</li><li>Preparación de talleres y elaboración de informes</li></ul>
+  </div>
+
+  <div class="section-title">Formación complementaria</div>
+  <div class="entry">
+    <div class="entry-header"><span class="entry-title">Auxiliar de Farmacia Hospitalaria</span><span class="entry-date">2020 – 2021</span></div>
+    <div class="entry-sub">Escuela de Enfermería Colón · Las Piedras, Canelones</div>
+    <ul><li>Dispensación de medicación, atención al usuario y manejo de estupefacientes</li><li>Desarrollo de escucha activa</li><li>Trabajo en equipo</li></ul>
+  </div>
+
+  <div class="section-title">Idiomas</div>
+  <div class="entry">
+    <div class="entry-header"><span class="entry-title">Inglés – Nivel First</span></div>
+    <ul>
+      <li>Comprensión: Muy bien</li>
+      <li>Lectura: Muy bien</li>
+      <li>Escritura: Bien</li>
+      <li>Expresión oral: Bien</li>
+    </ul>
+  </div>
+</div>
+
 </body>
 </html>
-
-
