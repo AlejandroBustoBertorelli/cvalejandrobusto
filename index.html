@@ -22,13 +22,13 @@ body { font-family: Georgia, serif; color: #2c2c2c; background: #fff; font-size:
 .tag { display: inline-block; background: #1a3a5c; color: white; font-size: 8.5pt; padding: 2px 7px; border-radius: 3px; margin: 2px 2px 2px 0; }
 .entry { margin-bottom: 15px; }
 .entry-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
-.entry-title { font-weight: bold; font-size: 11pt; color: #1a3a5c; }
-.entry-date { font-size: 10pt; color: #666; white-space: nowrap; margin-left: 10px; }
-.entry-sub { font-size: 10pt; color: #555; font-style: italic; margin-bottom: 5px; }
-.entry ul { padding-left: 16px; font-size: 10.5pt; color: #3a3a3a; }
+.entry-title { font-weight: bold; font-size: 12pt; color: #1a3a5c; }
+.entry-date { font-size: 11pt; color: #666; white-space: nowrap; margin-left: 10px; }
+.entry-sub { font-size: 11.5pt; color: #3a3a3a; font-style: normal; margin-bottom: 5px; }
+.entry ul { padding-left: 16px; font-size: 11.5pt; color: #3a3a3a; }
 .entry ul li { margin-bottom: 2px; }
-.perfil-text { font-size: 10.8pt; color: #3a3a3a; line-height: 1.65; text-align: justify; border-left: 3px solid #1a3a5c; padding-left: 12px; }
-.poster-item { font-size: 10pt; color: #3a3a3a; margin-bottom: 7px; padding-left: 10px; border-left: 2px solid #a8c8e8; line-height: 1.4; }
+.perfil-text { font-size: 11.8pt; color: #3a3a3a; line-height: 1.65; text-align: justify; border-left: 3px solid #1a3a5c; padding-left: 12px; }
+.poster-item { font-size: 11pt; color: #3a3a3a; margin-bottom: 7px; padding-left: 10px; border-left: 2px solid #a8c8e8; line-height: 1.4; }
 .idioma-row { display: flex; justify-content: space-between; font-size: 10.5pt; margin-bottom: 3px; }
 .idioma-label { color: #555; }
 .idioma-val { font-weight: bold; color: #1a3a5c; }
@@ -36,7 +36,7 @@ body { font-family: Georgia, serif; color: #2c2c2c; background: #fff; font-size:
 .badge { display: inline-block; background: #1a3a5c; color: white; font-size: 10pt; padding: 3px 10px; border-radius: 4px; margin-top: 5px; }
 .print-btn { position: fixed; top: 16px; right: 16px; background: #f2f2f2; color: #1a3a5c; border: none; padding: 10px 20px; border-radius: 6px; font-size: 11pt; cursor: pointer; z-index: 999; font-family: sans-serif; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
 .print-btn:hover { background: #e0e0e0; }
-@media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .print-btn { display: none; } }
+@media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .print-btn { display: none; } .sidebar { background: #fff; border-right: none; } }
 @media (max-width: 600px) {
   body { font-size: 14pt; }
   .header { padding: 24px 20px 20px; }
@@ -51,12 +51,12 @@ body { font-family: Georgia, serif; color: #2c2c2c; background: #fff; font-size:
   .sidebar-item { font-size: 13pt; }
   .sidebar-item strong { font-size: 12pt; }
   .tag { font-size: 11pt; padding: 3px 9px; }
-  .entry-title { font-size: 14pt; }
-  .entry-date { font-size: 12pt; }
-  .entry-sub { font-size: 12pt; }
-  .entry ul { font-size: 13pt; }
-  .perfil-text { font-size: 13pt; }
-  .poster-item { font-size: 13pt; }
+  .entry-title { font-size: 15pt; }
+  .entry-date { font-size: 13pt; }
+  .entry-sub { font-size: 13pt; }
+  .entry ul { font-size: 14pt; }
+  .perfil-text { font-size: 14pt; }
+  .poster-item { font-size: 14pt; }
   .idioma-row { font-size: 13pt; }
   .lang-title { font-size: 14pt; }
   .badge { font-size: 12pt; }
@@ -83,12 +83,6 @@ body { font-family: Georgia, serif; color: #2c2c2c; background: #fff; font-size:
     <div class="sidebar-item" style="margin-top:8px;"><strong>Investigación</strong><span class="tag">Análisis estadístico</span><span class="tag">Validación de escalas psicológicas</span><span class="tag">Ética en investigación</span></div>
     <div class="sidebar-item" style="margin-top:8px;"><strong>Docencia</strong><span class="tag">Profesor particular</span><span class="tag">Talleres grupales</span></div>
 
-    <div class="section-title">Idiomas</div>
-    <div class="lang-title">Inglés – Nivel First</div>
-    <div class="idioma-row"><span class="idioma-label">Comprensión</span><span class="idioma-val">Muy bien</span></div>
-    <div class="idioma-row"><span class="idioma-label">Lectura</span><span class="idioma-val">Muy bien</span></div>
-    <div class="idioma-row"><span class="idioma-label">Escritura</span><span class="idioma-val">Bien</span></div>
-    <div class="idioma-row"><span class="idioma-label">Expresión oral</span><span class="idioma-val">Bien</span></div>
   </div>
   <div class="main">
     <div class="section-title">Perfil Profesional</div>
@@ -111,10 +105,9 @@ body { font-family: Georgia, serif; color: #2c2c2c; background: #fff; font-size:
       <div class="entry-sub">Facultad de Psicología · UdelaR · Supervisora: Prof. Victoria Gradin</div>
       <ul><li>Atención psicológica individual a dos pacientes adultos (aprox. 50 horas clínicas)</li><li>Abordaje de sintomatología ansiosa y depresiva en población adulta</li><li>Psicoterapia con enfoque cognitivo-conductual</li><li>Supervisión clínica grupal (aprox. 80 horas)</li><li>Elaboración de informes y conceptualización de caso</li><li>Diseño de estrategias de intervención</li></ul>
     </div>
-    <div class="section-title">Experiencia en Investigación</div>
+    <div class="section-title">Experiencia en Investigación – Facultad de Psicología</div>
     <div class="entry">
-      <div class="entry-header"><span class="entry-title">Secretario · Comité de Ética en Investigación</span><span class="entry-date">2024 – Actualidad</span></div>
-      <div class="entry-sub">Facultad de Psicología · UdelaR · Supervisor: Prof. Ismael Apud</div>
+      <div class="entry-header"><span class="entry-title">Comité de Ética en Investigación. Secretario: 30 horas semanales</span><span class="entry-date">2024 – Actualidad</span></div>
       <ul><li>Conocimiento de normativa ética nacional e internacional</li><li>Organización de proyectos, planificación de reuniones y elaboración de actas</li></ul>
     </div>
     <div class="entry">
@@ -142,6 +135,16 @@ body { font-family: Georgia, serif; color: #2c2c2c; background: #fff; font-size:
       <div class="entry-header"><span class="entry-title">Auxiliar de Farmacia Hospitalaria</span><span class="entry-date">2020 – 2021</span></div>
       <div class="entry-sub">Escuela de Enfermería Colón · Las Piedras, Canelones</div>
       <ul><li>Dispensación de medicación, atención al usuario y manejo de estupefacientes</li><li>Desarrollo de escucha activa</li><li>Trabajo en equipo</li></ul>
+    </div>
+    <div class="section-title">Idiomas</div>
+    <div class="entry">
+      <div class="entry-header"><span class="entry-title">Inglés – Nivel First</span></div>
+      <ul>
+        <li>Comprensión: Muy bien</li>
+        <li>Lectura: Muy bien</li>
+        <li>Escritura: Bien</li>
+        <li>Expresión oral: Bien</li>
+      </ul>
     </div>
   </div>
 </div>
